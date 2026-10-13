@@ -1,0 +1,32 @@
+{
+  "users": {
+    "alice": { "quota": 3 },
+    "bob":   { "quota": 5 }
+  },
+  "tasks": [
+    {
+      "id": "alice-sync-data",
+      "user": "alice",
+      "time": "12:00",
+      "action": "sync",
+      "params": { "target": "/data/x" }
+    },
+    {
+      "id": "bob-backup-srv",
+      "user": "bob",
+      "time": "12:00",
+      "action": "backup",
+      "params": { "target": "/srv/y", "retention_days": 14 }
+    },
+    {
+      "id": "alice-delete-tmp",
+      "user": "alice",
+      "time": "12:00",
+      "action": "delete",
+      "params": { "target": "/tmp/z" }
+    }
+  ],
+  "settings": {
+    "catchup_minutes": 60
+  }
+}

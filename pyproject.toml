@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orbit-scheduler"
+version = "1.0.0"
+description = "Strategy-based task scheduling with per-user daily resource limits."
+readme = "README.md"
+requires-python = ">=3.10"
+# No runtime dependencies, on purpose. The scheduling, quota and executor design is the
+# thing under review; a third-party scheduler would hide it behind someone else's
+# abstractions. See AI_COLLABORATION.md for the rejected alternatives.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+orbit-scheduler = "main:main"
+
+[tool.setuptools]
+packages = ["orbit_scheduler", "orbit_scheduler.executors"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+filterwarnings = ["error"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
