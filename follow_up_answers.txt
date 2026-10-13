@@ -1,0 +1,9 @@
+Answers on follow-up questions:
+
+1. as the main goal is to refactor the existing code to be readable, scalable, and extensible, i let my Claude to let it know the facts first. Then, find the "what's wrong" with the code and the posiibility of refactoring the code. As it already know the context, i let it plan based on the goals that already defined, using senior, modular, DRY approach. additionally, i also asked the ai to document the code, including the flow, architecture, and ERD.
+
+2. i reviewed the ai-generated plan on what it planned to do, as it's already what i wanted and reached the goal, then i approved its plan.
+
+3. event-driven approach, with message queue.
+
+4. i'll name the "tasks" as module and it will have its own domain and functions. as this module could be separated domains for its component, then it could be used as a reusable module across teams.
